@@ -1,0 +1,135 @@
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>URL Decoder/Encoder</title>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://host.yasiu.pl/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://host.yasiu.pl/css/materialize.min.css">
+
+  <style type="text/css">
+    textarea {
+      resize: none;
+      min-height: 100px;
+      max-height: 512px;
+      overflow-y: auto;
+    }
+
+    body {
+      background-color: #FF5722;
+      margin: 0;
+    }
+
+    .input-field textarea[type=text]:focus {
+      border-bottom: 1px solid #FF5722;
+      box-shadow: 0 1px 0 0 #FF5722;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function decode() {
+      // From: http://phpjs.org/functions
+      // +   original by: Tyler Akins (http://rumkin.com)
+
+      var data = document.getElementById('dencoder').value
+
+      var b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+      var o1, o2, o3, h1, h2, h3, h4, bits, i = 0,
+        ac = 0,
+        dec = "",
+        tmp_arr = [];
+
+      if (!data) {
+        return data;
+      }
+
+      data += '';
+
+      do { // unpack four hexets into three octets using index points in b64
+        h1 = b64.indexOf(data.charAt(i++));
+        h2 = b64.indexOf(data.charAt(i++));
+        h3 = b64.indexOf(data.charAt(i++));
+        h4 = b64.indexOf(data.charAt(i++));
+
+        bits = h1 << 18 | h2 << 12 | h3 << 6 | h4;
+
+        o1 = bits >> 16 & 0xff;
+        o2 = bits >> 8 & 0xff;
+        o3 = bits & 0xff;
+
+        if (h3 == 64) {
+          tmp_arr[ac++] = String.fromCharCode(o1);
+        } else if (h4 == 64) {
+          tmp_arr[ac++] = String.fromCharCode(o1, o2);
+        } else {
+          tmp_arr[ac++] = String.fromCharCode(o1, o2, o3);
+        }
+      } while (i < data.length);
+
+      document.getElementById('dencoder').value = tmp_arr.join('');
+    }
+
+    function encode() {
+      // From: http://phpjs.org/functions
+      // +   original by: Tyler Akins (http://rumkin.com)
+      var data = document.getElementById('dencoder').value
+
+      var b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+      var o1, o2, o3, h1, h2, h3, h4, bits, i = 0,
+        ac = 0,
+        enc = "",
+        tmp_arr = [];
+
+      if (!data) {
+        return data;
+      }
+
+      do { // pack three octets into four hexets
+        o1 = data.charCodeAt(i++);
+        o2 = data.charCodeAt(i++);
+        o3 = data.charCodeAt(i++);
+
+        bits = o1 << 16 | o2 << 8 | o3;
+
+        h1 = bits >> 18 & 0x3f;
+        h2 = bits >> 12 & 0x3f;
+        h3 = bits >> 6 & 0x3f;
+        h4 = bits & 0x3f;
+
+        // use hexets to index into b64, and append result to encoded string
+        tmp_arr[ac++] = b64.charAt(h1) + b64.charAt(h2) + b64.charAt(h3) + b64.charAt(h4);
+      } while (i < data.length);
+
+      enc = tmp_arr.join('');
+
+      var r = data.length % 3;
+
+      document.getElementById('dencoder').value = (r ? enc.slice(0, r - 3) : enc) + '==='.slice(r || 3);
+
+    }
+  </script>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="valign-wrapper row" style="height:97%">
+        <div class="card col s12">
+          <div class="card-content">
+            <span class="card-title">Base64 Decoder/Encoder</span>
+            <div class="input-field">
+              <textarea type="text" placeholder="enter url here" class="materialize-textarea" id="dencoder"></textarea>
+            </div>
+            <div class="center">
+              <button class="waves-effect waves btn deep-orange" onclick="decode()">Decode</button>
+              <button class="waves-effect waves btn deep-orange" onclick="encode()">Encode</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

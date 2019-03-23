@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#FF5722">
+  <meta name="description" content="Marcin Jasiukowicz's Showcase" />
+  <meta name="keywords" content="Marcin Jasiukowicz's Showcase" />
+  <meta property="og:title" content="yasiu.pl" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://host.yasiu.pl/img/meirl.jpg" />
+  <meta property="og:url" content="https://yasiu.pl" />
+  <meta property="og:description" content="Marcin Jasiukowicz's Showcase" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="yasiu.pl" />
+  <meta name="twitter:description" content="Marcin Jasiukowicz's Showcase" />
+  <meta name="twitter:image" content="https://host.yasiu.pl/img/meirl.jpg" />
+  <title>yasiu.pl</title>
+
+  <link href="/style.css" type="text/css" rel="stylesheet">
+  <link href="//host.yasiu.pl/css/materialize.min.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body id="top" class="scrollspy">
+  <!--Navigation-->
+  <header>
+    <div class="navbar-fixed">
+      <nav id="nav_f" class="default_color" role="navigation">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#" id="logo-container" class="brand-logo">yasiu.pl</a>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a href="#work">Projects</a>
+              </li>
+              <li>
+                <a href="https://www.patreon.com/yasiupl" target="_blank">Donate</a>
+              </li>
+              <li>
+                <a href="mailto:contact@yasiu.pl?subject=Website%20Contact%20Form">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="section">
+      <div class="container row">
+        <div class="col s12">
+          <div class="card card-avatar">
+            <div class="card-content">
+              <img src="https://host.yasiu.pl/img/meirl.jpg">
+              <span class="card-title">Hi, I'm Marcin Jasiukowicz <a alt="Y">🅨</a></span>
+              <p>Welcome to my showcase! You can find examples of my work below. Yes, I like <a color="#FF5722">orange</a>.</br>Contact me via any of the channels below:</p>
+
+            </div>
+            <div class="card-action" style="text-align: center">
+              <a href="https://reddit.com/u/MarcysVonEylau">Reddit</a>
+              <a href="https://twitter.com/yasiupl">Twitter</a>
+              <a href="https://github.com/yasiupl">GitHub</a>
+              <a href="https://www.linkedin.com/in/yasiupl">LinkedIn</a>
+              <a href="mailto:contact@yasiu.pl?subject=Website%20Contact%20Form">eMail</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col m12 l6">
+          <div class="card horizontal" onclick="window.open('https://www.last.fm/user/yasiupl', '_blank')">
+            <div class="card-image">
+              <img style="max-height:174px" id="album-cover" src="https://host.yasiu.pl/img/unknown-artist.jpg">
+            </div>
+            <div class="card-stacked">
+              <div style="max-height:174px; overflow: hidden;" class="card-content">
+                <a id="track-status">last.fm</a>
+                <p class="flow-text black-text" id="track"></p>
+                <a class="black-text" id="track-ago">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col m12 l6">
+          <div class="card horizontal" onclick="window.open('https://twitter.com/yasiupl', '_blank')">
+            <div class="card-image">
+              <img style="max-height:174px; max-width: unset;" src="https://host.yasiu.pl/img/twitter.jpg">
+            </div>
+            <div class="card-stacked">
+              <div style="max-height:174px; overflow: scroll;" class="card-content">
+                <a>@yasiupl:</a>
+                <p class="flow-text black-text" id="tweet"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="section scrollspy" id="work">
+      <div class="container row">
+
+        <div class="col s12 m4">
+          <div class="card" onclick="window.open('https://www.youtube.com/channel/UCqFJAKOMWvS_oKHk9ppMC8w', '_blank')">
+            <div class="card-image">
+              <img src="https://host.yasiu.pl/img/yt.png">
+              <iframe src="https://www.youtube.com/embed/?list=UUqFJAKOMWvS_oKHk9ppMC8w&showinfo=0&rel=0&controls=0&loop=1" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4">YouTube</span>
+              <a>yasiu.pl/youtube</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card" onclick="window.open('https://rocket.watch', '_blank')">
+            <div class="card-image">
+              <img src="https://host.yasiu.pl/img/rocketwatch.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4">Rocket Watch</span>
+              <a>rocket.watch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="card" onclick="window.open('https://www.patreon.com/yasiupl', '_blank')">
+            <div class="card-image">
+              <img src="https://host.yasiu.pl/img/patreon.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4">Support Me</span>
+              <a>patreon.com/yasiu</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div id="intro" class="section scrollspy">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <h2 class="center header text_h2">Do not argue with <span class="span_h2">Idiots.</span> They will only bring you down to their level and beat you with <span class="span_h2">experience.</span></h2>
+            <!--<h3 class="right text_h2">― George Carlin</h3> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+
+  <script>
+    function getJSON(g, h) {
+      try {
+        var k = new XMLHttpRequest();
+        k.onreadystatechange = function() {
+          if (k.readyState === 4) {
+            if (k.responseText.split()[0] == "{" || k.status == 200) {
+              var a = JSON.parse(k.responseText);
+              a.timestamp = Date.now();
+              h(a)
+            } else {
+              var a = {
+                timestamp: Date.now(),
+                status: (k.status || "error"),
+                code: k.statusText,
+                msg: k.responseText
+              };
+              h(a);
+              console.log(a)
+            }
+          }
+        };
+        k.open("GET", g);
+        k.send()
+      } catch (e) {
+        console.log(e)
+      }
+    };
+
+    (function() {
+      getJSON("/metadata/lastfm.json?t=" + Date.now(), function(data) {
+        if (!data.recenttracks.track[0]["@attr"]) {
+          var ago = Math.ceil((Date.now() / 1000 - data.recenttracks.track[0].date.uts) / 60);
+        }
+
+        document.getElementById("album-cover").src = data.recenttracks.track[0].image[3]["#text"] || "https://host.yasiu.pl/img/unknown-artist.jpg";
+        document.getElementById("track").innerHTML = data.recenttracks.track[0].artist["#text"] +
+          ": " + data.recenttracks.track[0].name;
+        if (data.recenttracks.track[0]["@attr"] && data.recenttracks.track[0]["@attr"].nowplaying) {
+          document.getElementById("track-status").innerHTML = "I'm listening to…"
+          document.getElementById("track-ago").innerHTML = "Right now"
+        } else if (0 < ago && ago < 60) {
+          document.getElementById("track-status").innerHTML = "I just stopped listening to…"
+          document.getElementById("track-ago").innerHTML = ago + " Minutes ago"
+        } else if (ago > 60) {
+          document.getElementById("track-status").innerHTML = "Last played…"
+          document.getElementById("track-ago").innerHTML = Math.round(ago / 60) + " Hours ago"
+        } else {
+          document.getElementById("track-status").innerHTML = "Last song I've listened to…"
+        }
+      });
+      getJSON("/metadata/twitter.json?t=" + Date.now(), function(data) {
+        document.getElementById("tweet").innerHTML = data[0].text.split("…")[0] + "...";
+      })
+    })()
+  </script>
+</body>
+
+</html>

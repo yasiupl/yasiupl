@@ -1,0 +1,9 @@
+
+	Header set Access-Control-Allow-Origin "*"
+
+	<filesMatch ".(jpg|jpeg|png|gif|svg)$">
+	Header set Cache-Control "max-age=31536000, public"
+	</filesMatch>
+	<filesMatch ".(css|js|json)$">
+	Header set Cache-Control "max-age=3600, public"
+	</filesMatch>

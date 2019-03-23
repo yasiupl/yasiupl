@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>URL Decoder/Encoder</title>
+
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="http://host.yasiu.pl/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="http://host.yasiu.pl/css/materialize.min.css">
+
+    <style type="text/css">
+        textarea {
+            resize: none;
+            min-height: 100px;
+            max-height: 512px;
+            overflow-y: auto;
+        }
+
+        body {
+            background-color: #FF5722;
+            margin: 0;
+        }
+
+        .input-field textarea[type=text]:focus {
+            border-bottom: 1px solid #FF5722;
+            box-shadow: 0 1px 0 0 #FF5722;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function encode() {
+            var obj = document.getElementById('dencoder');
+            var unencoded = obj.value;
+            obj.value = encodeURIComponent(unencoded).replace(/'/g, "%27").replace(/"/g, "%22");
+        }
+
+        function decode() {
+            var obj = document.getElementById('dencoder');
+            var encoded = obj.value;
+            obj.value = decodeURIComponent(encoded.replace(/\+/g, " "));
+        }
+    </script>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="valign-wrapper row" style="height:97%">
+                <div class="card col s12">
+                    <div class="card-content">
+                        <span class="card-title">URL Decoder/Encoder</span>
+                        <div class="input-field">
+                            <textarea type="text" placeholder="enter url here" class="materialize-textarea" id="dencoder"></textarea>
+                        </div>
+                        <div class="center">
+                            <button class="waves-effect waves btn deep-orange" onclick="decode()">Decode</button>
+                            <button class="waves-effect waves btn deep-orange" onclick="encode()">Encode</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
