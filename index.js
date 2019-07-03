@@ -1,5 +1,5 @@
 //#!/usr/bin/env nodejs
-var auth = require('auth.json');
+var auth = require('./auth.json');
 var express = require('express');
 var compression = require('compression');
 var request = require('request');
@@ -9,7 +9,7 @@ var Twitter = require('twitter');
 var app = express();
 app.use(function(req, res, next) {
   res.set({
-    'Content-Security-Policy': "default-src data: blob: https: 'unsafe-inline' 'unsafe-eval'; connect-src https:; frame-src http: https:",
+    //'Content-Security-Policy': "default-src data: blob: https: 'unsafe-inline' 'unsafe-eval'; connect-src https:; frame-src http: https:",
     'Strict-Transport-Security': 'max-age=2592000; includeSubDomains; preload',
     'Referrer-Policy': 'same-origin',
     'X-Content-Type-Options': 'nosniff',
@@ -76,16 +76,6 @@ app.route('/metadata/twitter.json').get(function(req, res) {
   twitter.get('statuses/user_timeline', {screen_name: 'yasiupl', count: 1}, function(error, tweets, response) {
     res.json(tweets || error);
   });
-});
-
-
-function callback(error, response, body) {
-    if (!error && response.statusCode == 200) {
-        console.log(body);
-    }
-}
-
-request(options).pipe(res);;
 });
 
 app.route('/projects/satellite/proxy/*').get(function(req, res) {

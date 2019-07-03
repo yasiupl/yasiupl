@@ -9,17 +9,17 @@
   <meta name="keywords" content="Marcin Jasiukowicz's Showcase" />
   <meta property="og:title" content="yasiu.pl" />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://host.yasiu.pl/img/meirl.jpg" />
+  <meta property="og:image" content="./host/img/meirl.jpg" />
   <meta property="og:url" content="https://yasiu.pl" />
   <meta property="og:description" content="Marcin Jasiukowicz's Showcase" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="yasiu.pl" />
   <meta name="twitter:description" content="Marcin Jasiukowicz's Showcase" />
-  <meta name="twitter:image" content="https://host.yasiu.pl/img/meirl.jpg" />
+  <meta name="twitter:image" content="./host/img/meirl.jpg" />
   <title>yasiu.pl</title>
 
-  <link href="/style.css" type="text/css" rel="stylesheet">
-  <link href="//host.yasiu.pl/css/materialize.min.css" type="text/css" rel="stylesheet">
+  <link href="./style.css" type="text/css" rel="stylesheet">
+  <link href="./host/css/materialize.min.css" type="text/css" rel="stylesheet">
 
 </head>
 
@@ -52,7 +52,7 @@
         <div class="col s12">
           <div class="card card-avatar">
             <div class="card-content">
-              <img src="https://host.yasiu.pl/img/meirl.jpg">
+              <img src="./host/img/meirl.jpg">
               <span class="card-title">Hi, I'm Marcin Jasiukowicz <a alt="Y">🅨</a></span>
               <p>Welcome to my showcase! You can find examples of my work below. Yes, I like <a color="#FF5722">orange</a>.</br>Contact me via any of the channels below:</p>
 
@@ -70,7 +70,7 @@
         <div class="col m12 l6">
           <div class="card horizontal" onclick="window.open('https://www.last.fm/user/yasiupl', '_blank')">
             <div class="card-image">
-              <img style="max-height:174px" id="album-cover" src="https://host.yasiu.pl/img/unknown-artist.jpg">
+              <img style="max-height:174px" id="album-cover" src="./host/img/unknown-artist.jpg">
             </div>
             <div class="card-stacked">
               <div style="max-height:174px; overflow: hidden;" class="card-content">
@@ -84,7 +84,7 @@
         <div class="col m12 l6">
           <div class="card horizontal" onclick="window.open('https://twitter.com/yasiupl', '_blank')">
             <div class="card-image">
-              <img style="max-height:174px; max-width: unset;" src="https://host.yasiu.pl/img/twitter.jpg">
+              <img style="max-height:174px; max-width: unset;" src="./host/img/twitter.jpg">
             </div>
             <div class="card-stacked">
               <div style="max-height:174px; overflow: scroll;" class="card-content">
@@ -105,7 +105,7 @@
         <div class="col s12 m4">
           <div class="card" onclick="window.open('https://www.youtube.com/channel/UCqFJAKOMWvS_oKHk9ppMC8w', '_blank')">
             <div class="card-image">
-              <img src="https://host.yasiu.pl/img/yt.png">
+              <img src="./host/img/yt.png">
               <iframe src="https://www.youtube.com/embed/?list=UUqFJAKOMWvS_oKHk9ppMC8w&showinfo=0&rel=0&controls=0&loop=1" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="card-content">
@@ -117,7 +117,7 @@
         <div class="col s12 m4">
           <div class="card" onclick="window.open('https://rocket.watch', '_blank')">
             <div class="card-image">
-              <img src="https://host.yasiu.pl/img/rocketwatch.png">
+              <img src="./host/img/rocketwatch.png">
             </div>
             <div class="card-content">
               <span class="card-title grey-text text-darken-4">Rocket Watch</span>
@@ -129,7 +129,7 @@
         <div class="col s12 m4">
           <div class="card" onclick="window.open('https://www.patreon.com/yasiupl', '_blank')">
             <div class="card-image">
-              <img src="https://host.yasiu.pl/img/patreon.png">
+              <img src="./host/img/patreon.png">
             </div>
             <div class="card-content">
               <span class="card-title grey-text text-darken-4">Support Me</span>
@@ -193,7 +193,7 @@
           var ago = Math.ceil((Date.now() / 1000 - data.recenttracks.track[0].date.uts) / 60);
         }
 
-        document.getElementById("album-cover").src = data.recenttracks.track[0].image[3]["#text"] || "https://host.yasiu.pl/img/unknown-artist.jpg";
+        document.getElementById("album-cover").src = data.recenttracks.track[0].image[3]["#text"] || "./host/img/unknown-artist.jpg";
         document.getElementById("track").innerHTML = data.recenttracks.track[0].artist["#text"] +
           ": " + data.recenttracks.track[0].name;
         if (data.recenttracks.track[0]["@attr"] && data.recenttracks.track[0]["@attr"].nowplaying) {
