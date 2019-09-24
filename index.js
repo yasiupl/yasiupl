@@ -41,7 +41,7 @@ app.get('/instagram', function(req, res) {
 });
 
 app.get('/patreon', function(req, res) {
-  res.redirect(301, 'https://patreon.com/yasiu');
+  res.redirect(301, 'https://patreon.com/yasiupl');
 });
 
 app.get('/youtube', function(req, res) {
