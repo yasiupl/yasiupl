@@ -3,9 +3,6 @@
   	command = "make deploy"
 	functions = "dist/server"
 
-[build.environment]
-  	NODE_OPTIONS = "--max_old_space_size=4096"
-
 [[redirects]]
 	from = "/reddit"
   	to = "https://reddit.com/u/marcysvoneylau"
