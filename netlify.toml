@@ -1,0 +1,37 @@
+[build]
+  	publish = "dist/"
+  	command = "make deploy"
+	functions = "dist/server"
+
+[[redirects]]
+	from = "/reddit"
+  	to = "https://reddit.com/u/marcysvoneylau"
+
+[[redirects]]
+  	from = "/twitter"
+  	to = "https://twitter.com/yasiupl"
+
+[[redirects]]
+  	from = "/linkedin"
+  	to = "https://www.linkedin.com/in/yasiupl"
+
+[[redirects]]
+  	from = "/github"
+    to = "https://github.com/yasiupl"
+
+
+[[redirects]]
+  	from = "/patreon"
+  	to = "https://www.patreon.com/yasiupl"
+
+[[redirects]]
+  	from = "/donate"
+  	to = "https://www.patreon.com/yasiupl"
+
+[[redirects]]
+  	from = "/paypal"
+  	to = "https://www.paypal.me/yasiupl"
+
+[[redirects]]
+  	from = "/youtube"
+  	to = "https://www.youtube.com/channel/UCqFJAKOMWvS_oKHk9ppMC8w" 
