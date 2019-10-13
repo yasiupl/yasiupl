@@ -9,7 +9,10 @@ exports.handler = (event, context, callback) => {
     }, function (error, tweets, response) {
         callback(null, {
             statusCode: 200,
-            body: JSON.stringify(tweets)
+            body: JSON.stringify(tweets),
+            headers: {
+                'Content-type': 'application/json'
+            }
         });
     });
 };
