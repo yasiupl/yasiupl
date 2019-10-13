@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-const { lastfm } = process.env;
+const lastfm = process.env.lastfmAPI;
 
 const API_ENDPOINT = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=yasiupl&format=json&limit=1&api_key=${lastfm}`;
 

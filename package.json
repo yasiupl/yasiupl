@@ -6,7 +6,8 @@
   "dependencies": {
     "materialize-css": "^1.0.0",
     "netlify-lambda": "^1.6.3",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
     "css-loader": "^3.2.0",
