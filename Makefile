@@ -10,6 +10,9 @@ copy:
 serve: copy
 	node_modules/.bin/webpack-dev-server
 
+serve-all: copy
+	node_modules/.bin/webpack-dev-server& node_modules/.bin/netlify-lambda serve src/lambda
+
 serve-lambda: 
 	node_modules/.bin/netlify-lambda serve src/lambda
 
