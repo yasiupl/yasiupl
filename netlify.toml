@@ -4,10 +4,6 @@
 	functions = "dist/server"
 
 [[redirects]]
-        from = "yasiu.pl"
-	to = "https://y4s.io"
-
-[[redirects]]
 	from = "/reddit"
   	to = "https://reddit.com/u/marcysvoneylau"
 
