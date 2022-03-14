@@ -21,7 +21,9 @@ fetch(".netlify/functions/lastfm?t=" + Date.now(), {
   .then(response => response.json())
   .then(data => {
     if (!data.recenttracks.track[0]["@attr"]) {
-      var ago = Math.ceil((Date.now() / 1000 - data.recenttracks.track[0].date.uts) / 60);
+      let ago = Math.ceil((Date.now() / 1000 - data.recenttracks.track[0].date.uts) / 60);
+      let hours = Math.floor(ago / 60);
+      let days = Math.floor(ago / 1440);
     }
 
     document.getElementById("album-cover").src = data.recenttracks.track[0].image[3]["#text"] || "./assets/unknown-artist.png";
@@ -32,9 +34,12 @@ fetch(".netlify/functions/lastfm?t=" + Date.now(), {
     } else if (0 < ago && ago < 60) {
       document.getElementById("track-status").innerHTML = "I just stopped listening to…"
       document.getElementById("track-ago").innerHTML = ago + " Minutes ago"
-    } else if (ago > 60) {
+    } else if (ago >= 60 && ago <= 1440) {
       document.getElementById("track-status").innerHTML = "Last played…"
-      document.getElementById("track-ago").innerHTML = Math.round(ago / 60) + " Hours ago"
+      document.getElementById("track-ago").innerHTML = hours + " Hour" + ((hours-1)? "s" : "") + " ago"
+    } else if (ago > 1440) {
+      document.getElementById("track-status").innerHTML = "Last played…"
+      document.getElementById("track-ago").innerHTML = days + " Day" + ((days-1)? "s" : "") + " ago"
     } else {
       document.getElementById("track-status").innerHTML = "Last song I've listened to…"
     }
