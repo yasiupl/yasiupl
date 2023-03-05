@@ -12,6 +12,7 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+document.getElementById("logo-container").innerText = location.hostname
 
 fetch(".netlify/functions/lastfm?t=" + Date.now(), {
     headers: {
