@@ -6,5 +6,13 @@ exports.handler = async (event, context) => {
   const lat = event.queryStringParameters.lat;
   const lon = event.queryStringParameters.lon;
   const zoom = event.queryStringParameters.zoom;
-  return fetch(`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${lon},${lat},${zoom},0/512x512?access_token=${mapbox}`, { headers: { "Accept": "image/avif,image/webp,*/*" } });
+  return fetch(`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${lon},${lat},${zoom},0/512x512?access_token=${mapbox}`, { headers: { "Accept": "image/avif,image/webp,*/*" } })
+  .then(data => ({
+    statusCode: 200,
+    body: data.toString('base64'),
+    isBase64Encoded: true,
+    headers: {
+        'Content-type': 'image/avif,image/webp,*/*'
+    }
+}));
 };
