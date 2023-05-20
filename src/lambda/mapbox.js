@@ -7,10 +7,9 @@ exports.handler = async (event, context) => {
   const lon = event.queryStringParameters.lon;
   const zoom = event.queryStringParameters.zoom;
   return fetch(`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${lon},${lat},${zoom},0/512x512?access_token=${mapbox}`, { headers: { "Accept": "image/avif,image/webp,*/*" } })
-    .then(response => response.json())
     .then(data => ({
         statusCode: 200,
-        body: JSON.stringify(data),
+        body: data,
         headers: {
             'Content-type': 'image/avif,image/webp,*/*'
         }
