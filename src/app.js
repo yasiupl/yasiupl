@@ -54,5 +54,5 @@ fetch(".netlify/functions/aprs?t=" + Date.now(), {
   .then(response => response.json())
   .then(data => {
     document.getElementById("aprs-map").src = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${data.entries[0].lng},${data.entries[0].lat},12,0/512x512?access_token=pk.eyJ1IjoieWFzaXUiLCJhIjoiY2xod2I1NXE5MGd2ODNsbWQ0cjk3OGxjbSJ9.b2FBXODDAf00U1T4iqLWag`
-    document.getElementById("aprs-comment").innerHTML = `Speed: ${data.entries[0].speed}</br> Course: ${data.entries[0].course}</br> Altitude: ${data.entries[0].altitude}`;
+    document.getElementById("aprs-comment").innerHTML = `Speed: ${data.entries[0].speed} km/h</br> Course: ${data.entries[0].course} °</br> Altitude: ${data.entries[0].altitude} m`;
   })
