@@ -46,12 +46,13 @@ fetch(".netlify/functions/lastfm?t=" + Date.now(), {
     }
   })
   
-fetch(".netlify/functions/twitter?t=" + Date.now(), {
+fetch(".netlify/functions/aprs?t=" + Date.now(), {
     headers: {
       "Accept": "application/json"
     }
   })
   .then(response => response.json())
   .then(data => {
-    document.getElementById("tweet").innerHTML = data[0].text.split("…")[0] + "...";
+    document.getElementById("aprs-map").src = `.netlify/functions/mapbox?lat=${data.entries[0].lat}&lon=${data.entries[0].lng}&zoom=12`
+    document.getElementById("aprs-comment").innerHTML = `Speed: ${data.entries[0].speed}</br> Course: ${data.entries[0].course}</br> Altitude: ${data.entries[0].altitude}</br> Comment: ${data.entries[0].comment}`;
   })
