@@ -32,8 +32,8 @@ module.exports = {
             name: 'yasiu.pl',
             short_name: 'yasiu.pl',
             description: 'yasiu.pl homepage',
-            background_color: '#ff5722',
-            theme_color: '#ff5722',
+            background_color: '#FF4F00',
+            theme_color: '#FF4F00',
             start_url: '/?utm_source=a2hs',
             display: 'standalone',
             ios: {
