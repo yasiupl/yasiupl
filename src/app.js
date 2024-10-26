@@ -54,5 +54,5 @@ fetch(".netlify/functions/aprs?t=" + Date.now(), {
   .then(response => response.json())
   .then(data => {
     document.getElementById("aprs-map").src = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${data.entries[0].lng},${data.entries[0].lat},12,0/512x512?access_token=pk.eyJ1IjoieWFzaXUiLCJhIjoiY2xod2I1NXE5MGd2ODNsbWQ0cjk3OGxjbSJ9.b2FBXODDAf00U1T4iqLWag`
-    document.getElementById("aprs-comment").innerHTML = `Speed: ${Number.parseFloat(data.entries[0].speed || 0).toFixed(2)} km/h</br> Course: ${Number.parseFloat(data.entries[0].course || 0).toFixed(2)} °</br> Altitude: ${Number.parseFloat(data.entries[0].altitude || 0).toFixed(2)} m</br> Comment: ${data.entries[0].comment || "Not set"} m`;
+    document.getElementById("aprs-comment").innerHTML = `Speed: ${Number.parseFloat(data.entries[0].speed || 0).toFixed(2)} km/h</br> Course: ${Number.parseFloat(data.entries[0].course || 0).toFixed(2)} °</br> Altitude: ${Number.parseFloat(data.entries[0].altitude || 0).toFixed(2)} m</br> Comment: ${data.entries[0].comment || "Not set"}`;
   })
